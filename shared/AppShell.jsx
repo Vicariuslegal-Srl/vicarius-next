@@ -8,7 +8,7 @@ import {API, saveUser, useRequestUser} from "./utils";
 import Link from 'next/link';
 import Image from 'next/image';
 import AvatarImage from "../avatar.png"
-import {constants} from "../constants/constants";
+import { constants } from "../constants/constants";
 
 const window = {};
 

@@ -1,4 +1,4 @@
-import { constants } from "../constants/constants";
+import {constants} from "../constants/constants";
 import {Fragment, useEffect, useState} from "react";
 
 const window = {};

@@ -1,4 +1,4 @@
-import { AppShell } from "./shared/AppShell";
+import { AppShell } from "../shared/AppShell";
 
 export default function Home() {
   return (
