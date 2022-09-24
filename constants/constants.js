@@ -1,13 +1,11 @@
 const requestedPermissions = ["email","name","picture"];
 const groupId = `1042268625926090`;
 
-const remoteAPIBaseUrl = process.env.NODE_ENV === "development" ? 'http://127.0.0.1:8000/api/v1/' : '/api/v1/';
-
 export const constants = {
     debug: process.env.NODE_ENV === "development",
     remoteBaseUrl: 'https://www.vicariuslegal.it/',
     requestUserStorageKey: 'vicarius_request_user',
-    remoteAPIBaseUrl: remoteAPIBaseUrl,
+    remoteAPIBaseUrl: 'https://www.vicariuslegal.it/api/v1/',
     amazonUrlDesktop: "https://rcm-eu.amazon-adsystem.com/e/cm?o=29&p=14&l=ur1&category=amazon_business&banner=1RFD5ZJTXCCWAX5VS602&f=ifr&linkID=52bdef3916fdae1a5edd850a24165ed0&t=vicariuslegal-21&tracking_id=vicariuslegal-21",
     amazonUrlMobile: "https://rcm-eu.amazon-adsystem.com/e/cm?o=29&p=12&l=ur1&category=amazon_business&banner=190TMXTRHHQ1MSA8Y002&f=ifr&linkID=8898d639ee3838e5d9a3df327089c317&t=vicariuslegal-21&tracking_id=vicariuslegal-21",
     fiverrUrlDesktop: "https://fiverr.ck-cdn.com/tn/serve/geoGroup/?rgid=9&bta=324061",
@@ -19,4 +17,6 @@ export const constants = {
     userCheckingUrl: 'user/current',
     publishToGroupUrl: `${groupId}/feed`,
     groupPostMessageTemplate: body => `Cerco un collega sostituto a ${body.location} disponibile per il giorno ${body.date}.\nPer info visitare il link: ${body.permalink}`,
+    user: 'https://www.vicariuslegal.it/api/v1/user',
+    searchUsersParams: ['first_name', 'last_name', 'dati_utente__citta'],
 }

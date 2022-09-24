@@ -14,13 +14,14 @@ const window = {};
 
 const usersListAPI = {
 
-    call: value => {
+    call: qString => {
 
-        return API('user/' + value)
-            .then(response => response.data || []);
+        return API('user/' + qString)
+            .then(response => response && response.data || []);
     },
     search: async value => {
-        const searchAtts = ['first_name', 'last_name', 'dati_utente__citta'];
+        console.log(value)
+        const searchAtts = constants.searchUsersParams;
         const qString = '?' + searchAtts.map(e => e + '=' + value).join('&')
         const remote = value.length > 0 ? await usersListAPI.call(qString) : false;
         return remote || [];
@@ -30,30 +31,30 @@ const usersListAPI = {
 const UsersResultList = ({searchValue, list, closeUsersList}) => {
 
     const classCSS = "app-users-list " + (window.isMobile ? 'fixed' : 'desktop')
-    const searchAtts = ['first_name', 'last_name', 'dati_utente__citta'];
+    const searchAtts = constants.searchUsersParams;
     const qString = '?' + searchAtts.map(e => e + '=' + searchValue).join('&');
 
     return <div className={classCSS}>
         <ul>
             {list.length > 0 ? <Fragment>
                 <li className="app-users-list__item">
-                    {/*<a href={`/app/users/${qString}`} onClick={() => closeUsersList()}>
+                    <a href={`/app/users/${qString}`} onClick={() => closeUsersList()}>
                         <i className='fas fa-search' style={{
                             fontSize: '15px',
                             marginRight: '10px'
                         }}/>
                         Visualizza elenco completo dei risultati
-                    </a>*/}
+                    </a>
                 </li>
                 {list.slice(0, 5).map((user, i) => <li key={i} className="app-users-list__item">
-                    {/*<a href={`/app/user/${user.id}`} onClick={() => closeUsersList()}>
+                    <a href={`/app/user/${user.id}`} onClick={() => closeUsersList()}>
                         <figure className="portrait">
                             <Image alt={user.name} src={user.picture} />
                         </figure>
                         <div className="element">
                             <span>{user.name}</span>
                         </div>
-                    </a>*/}
+                    </a>
                 </li>)}
             </Fragment> : <li className="app-users-list__item">Nessun utente trovato</li>}
         </ul>
@@ -82,7 +83,7 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
             <i className="fas fa-bars"/>
         </span>}
         <a href="/app/" className="alert-header__title">
-            <Image src={Logo} alt="vicarius logo" />
+            <Image src={Logo} alt="vicarius logo" width='45' height='45'/>
             <h2>Vicarius Legal</h2>
         </a>
         <div className="alert-header__search-container">
@@ -97,6 +98,7 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
                     setUsersList([]);
                 }} />}
                     <input ref={searchInput} placeholder="cerca per nome o città" type="text" onChange={async event => {
+                        console.log('la ricerca: ' + event.target.value)
                         const result = await usersListAPI.search(event.target.value);
                         setUsersList(result);
                         setActiveSearch(true);
@@ -115,9 +117,9 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
             <span className="alert-header__portrait is-desktop">
                 <Image src={requestUser ? requestUser.picture : AvatarImage} alt="Profilo"/>
             </span>
-        </Fragment> : <a href='/app/login' className='alert-header_login-btn regular-btn contained secondary'>
-            ACCEDI
-        </a>}
+        </Fragment> : <Link href='/app/login'>
+            <a className='alert-header_login-btn regular-btn contained secondary'>ACCEDI</a>
+        </Link>}
     </header>
 }
 

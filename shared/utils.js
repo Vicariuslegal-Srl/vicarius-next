@@ -115,9 +115,7 @@ export const API = async (endpoint, method='get', data=null) => {
     try {
         return await axios({url, method: method.toLowerCase(), data});
     } catch (e) {
-        if (!constants.debug){
-            return window.location.href = `/app/${e.response.status}`;
-        }
+        
     }
 }
 
