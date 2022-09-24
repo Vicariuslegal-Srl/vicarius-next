@@ -1,0 +1,79 @@
+* {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.5rem;
+}
+
+.danger-text {
+
+    color: var(--danger-color);
+
+    &.form-box {
+
+        padding: 10px 0;
+    }
+}
+
+.absolute-wrapper {
+
+    border-radius: 5px;
+}
+
+.absolute-img {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.absolute-title {
+
+    display: block;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 28px;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.app-text-content {
+
+    color: var(--light-gray);
+    line-height: 2;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 0 12px;
+}

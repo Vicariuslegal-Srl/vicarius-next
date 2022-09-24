@@ -1,0 +1,95 @@
+.md-component {
+
+  background: white;
+  display: block;
+  position: relative;
+  border-bottom: var(--br1);
+
+  &.outlined {
+
+    border-radius: 5px;
+    border: var(--br1);
+  }
+
+  label {
+
+    pointer-events: none;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    display: inline-block;
+    padding: 0 5px;
+    transition: transform 0.25s, color 0.47s;
+    color: var(--gray);
+  }
+
+  textarea, input, select {
+
+    display: block;
+    outline: none;
+    color: var(--gray);
+    background: transparent;
+    border: 0;
+    padding: 16px;
+    width: 100%;
+
+    &:focus + label, &:active + label {
+
+      transform: translateY(-166%);
+      color: var(--main-color);
+    }
+  }
+
+  &.active label {
+
+    transform: translateY(-166%);
+    color: var(--main-color);
+  }
+
+  &__icon {
+
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 10px;
+    font-size: 21px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background 0.23s;
+
+    &:hover {
+
+      background: var(--main-color-hover);
+    }
+  }
+
+  &__options-container {
+
+    // display: none;
+    width: 100%;
+    position: absolute;
+    background: white;
+    z-index: 99;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: var(--dv4);
+
+    option {
+
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+
+        background: var(--light-gray);
+      }
+    }
+  }
+}

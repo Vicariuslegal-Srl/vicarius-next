@@ -1,0 +1,251 @@
+html, body, * {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Cabin, sans-serif;
+    font-size: 14px;
+    color: var(--black);
+    scroll-behavior: smooth;
+}
+
+.app-shell {
+    
+    .main-grid {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        width: 90%;
+        margin: auto;
+    }
+}
+
+:root {
+
+    --view-width: 1080px;
+
+    --header-hover: rgba(255,255,255,.12);
+    --main-color: #038b79;
+    --main-color-active: rgb(4, 219, 189);
+    // --main-color-active: #03a892;
+    // --main-color-bkg-hover: rgb(4, 219, 189);
+    --main-color-hover: rgba(3, 139, 121, 0.1);
+    /*rgba(129, 206, 196, 0.2)*/
+    --second-color: #cc6600;
+    --second-color-hover: #ff9933;
+    --gray: rgb(100,100,100);
+    --light-gray: rgb(139, 139, 139);
+    --dark-gray: rgb(50,50,50);
+    --danger-color: #b60505;
+
+    --br1: 1px solid rgb(230,230,230);
+    --br2: 1px solid rgb(180,180,180);
+    --br3: 1px solid rgb(0,0,0);
+
+    --shadow-color: rgb(182, 177, 177);
+    --dv2: 0 2px 4px -1px var(--shadow-color);
+    --dv4: 0 4px 8px 0 var(--shadow-color);
+    --dv6: 0 8px 12px 1px var(--shadow-color);
+}
+
+body {
+    background-color: rgb(240,240,240);
+}
+
+.alert-box {
+
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.alert-flex-box {
+
+    display: flex;
+
+    &.between {
+
+        justify-content: space-between;
+    }
+
+    &.center {
+
+        justify-content: center;
+    }
+
+    &.end {
+
+        justify-content: flex-end;
+    }
+
+    &.start {
+
+        justify-content: flex-start;
+    }
+}
+
+.alert-flex-item-container {
+
+    flex: 0 0 100%;
+    position: relative;
+    display: block;
+}
+
+.full-box {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 12;
+    background: rgba(0,0,0,0.3);
+}
+
+.read-item {
+
+    font-size: 10px;
+    color: var(--light-gray);
+}
+
+.modal-container {
+    
+    padding: 15px;
+
+    > .modal-box {
+
+        margin: auto;
+        border-radius: 5px;
+        box-shadow: var(--dv6);
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+        background: #f0f0f0;
+
+        > .modal-box__footer {
+            
+            display: flex;
+            justify-content: flex-end;
+
+            .btn {
+
+
+            }
+        }
+    }
+}
+
+
+.modal-view-container {
+
+    background: white;
+    padding: 15px;
+    overflow-y: auto;
+
+    @media only screen and (min-width: 940px) {
+
+        background: rgba(0,0,0,0.3);
+    }
+
+    &__header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: white;
+        background-color: var(--main-color);
+        margin: -15px -15px 0 -15px;
+        padding: 15px;
+
+        &.cropped {
+
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            margin: -25px -25px 0 -25px;
+        }
+
+        .regular-btn {
+
+            color: white;
+            padding: 0;
+
+            i {
+
+                font-size: 21px;
+            }
+        }
+
+        h3 {
+
+            font-size: 21px;
+        }
+    }
+
+    &__content {
+
+        margin: auto;
+        max-width: 800px;
+        background: white;
+        border-radius: 5px;
+        overflow-y: auto;
+
+        @media only screen and (min-width: 940px) {
+
+            padding: 25px;
+        }
+    }
+
+    &__footer {
+
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.is {
+
+    &-mobile {
+
+        @media only screen and (min-width: 940px) {
+        
+            display: none !important;
+        }
+    }
+
+    &-desktop {
+
+        @media only screen and (max-width: 940px) {
+        
+            display: none !important;
+        }
+    }
+}
+
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss";
+@import "./styles/typos.scss";
+@import "./styles/alert-header.scss";
+@import "./styles/alert-main.scss";
+@import "./styles/alert-top-message.scss";
+@import "./styles/alert-list.scss";
+@import "./styles/alert-form.scss";
+@import "./styles/alert-title.scss";
+@import "./styles/alert-aside.scss";
+@import "./styles/alert-banner.scss";
+@import "./styles/alert-login.scss";
+@import "./styles/alert-toast.scss";
+@import "./styles/regular-btn.scss";
+@import "./styles/alert-facebook-btn.scss";
+@import "./styles/app-users-list.scss";
+@import "./styles/app-detail-view.scss";
+@import "./styles/app-avatar.scss";
+@import "./styles/app-list.scss";
+@import "./styles/app-card.scss";
+@import "./styles/app-carousel.scss";
+@import "./styles/alert-user-slider-card.scss";
+@import "./styles/alert-modal-view-form.scss";
+@import "./styles/material-design-inputs.scss";

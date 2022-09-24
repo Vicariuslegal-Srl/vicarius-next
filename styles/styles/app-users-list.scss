@@ -1,0 +1,63 @@
+.app-users-list {
+
+    &.fixed, &.desktop {
+
+      position: absolute;
+      overflow-y: auto;
+      // max-height: 350px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      background: transparent;
+      border-radius: 0 0 5px 5px;
+      box-shadow: var(--dv4);
+
+      @media only screen and (max-width: var(--view-width)) {
+
+        padding: 0;
+        overflow-y: visible;
+        max-height: none;
+      }
+    }
+
+    &__item {
+
+      padding: 15px;
+      background: white;
+      border-bottom: var(--br1);
+      box-shadow: var(--dv2);
+
+      .portrait {
+
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--light-gray);
+        border: 2px solid white;
+        margin-right: 10px;
+
+        > img {
+
+          width: 100%;
+        }
+      }
+
+      > a {
+
+        display: flex;
+        align-items: center;
+
+        > .element {
+
+          flex: 1;
+          color: black;
+          padding: 0;
+        }
+      }
+    }
+}

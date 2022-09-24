@@ -1,0 +1,33 @@
+.app-avatar {
+
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+
+    > img {
+
+        contain: content;
+        width: 100%;
+    }
+
+    &.normal {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    &.small {
+
+        width: 35px;
+        height: 35px;
+    }
+
+    &.large {
+
+        width: 65px;
+        height: 65px;
+    }
+}

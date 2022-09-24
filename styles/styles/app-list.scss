@@ -1,0 +1,76 @@
+.app-list {
+
+  background-color: white;
+  box-shadow: var(--dv2);
+  border-radius: 5px;
+
+  &__item {
+
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+
+    &__icon {
+
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      background-color: #cccccc;
+      margin: 8px 25px 8px 8px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &.normal {
+
+        width: 45px;
+        height: 45px;
+      }
+
+      &.small {
+
+        width: 35px;
+        height: 35px;
+      }
+
+      &.large {
+
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    &__text {
+
+      flex: 2;
+
+      .title {
+
+        padding: 8px 0;
+        font-size: 15px;
+        display: block;
+      }
+
+      .subtitle {
+
+        padding: 4px 0;
+        font-size: 13px;
+        display: block;
+        color: var(--light-gray);
+      }
+    }
+
+    &.bordered {
+
+      border-bottom: var(--br1);
+      transition: background-color 0.17s;
+
+      &:hover {
+
+        background-color: var(--main-color-hover);
+      }
+    }
+  }
+}

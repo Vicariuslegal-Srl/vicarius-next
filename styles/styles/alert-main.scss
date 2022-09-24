@@ -1,0 +1,19 @@
+.alert-main {
+
+    position: relative;
+    max-width: var(--view-width);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    padding-top: 15px;
+
+    @media only screen and (max-width: 940px) {
+        
+        grid-template-columns: 50% 50%;
+    }
+
+    @media only screen and (max-width: 640px) {
+        
+        grid-template-columns: 100%;
+    }
+}

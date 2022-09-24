@@ -1,0 +1,47 @@
+.regular-btn {
+
+    // TODO: install ripple effect and convert to btn component - https://www.npmjs.com/package/ripple-button
+
+    padding: 9px 18px;
+    border-radius: 5px;
+    color: var(--main-color);
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.17s;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    > .fa {
+        margin-right: 10px;
+    } 
+
+    &:hover {
+
+        background: var(--main-color-hover);
+    }
+
+    &.contained {
+
+        background-color: var(--main-color);
+        color: white;
+        box-shadow: var(--dv2);
+
+        &:hover {
+
+            // background-color: var(--main-color-active);
+            box-shadow: var(--dv4);
+        }
+
+        &:active {
+
+            border-radius: 15px 15px 10px 10px;
+        }
+
+        &.secondary {
+
+            background-color: var(--second-color);
+        }
+    }
+}

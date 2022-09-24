@@ -1,0 +1,17 @@
+.app-card {
+
+  // border: var(--br1);
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: var(--dv2);
+
+  &__inline {
+
+    display: inline-block;
+  }
+
+  &__content {
+
+    padding: 24px;
+  }
+}

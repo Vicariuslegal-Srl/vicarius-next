@@ -1,0 +1,23 @@
+.alert-toast {
+
+  z-index: 999;
+  width: 280px;
+  position: absolute;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 5px solid black;
+  box-shadow: var(--dv4);
+  margin: 10px;
+  background-color: white;
+
+  &.danger {
+
+    border-color: var(--second-color);
+    background: var(--second-color-hover);
+  }
+  &.success {
+
+    border-color: var(--main-color);
+    background: var(--main-color-active);
+  }
+}

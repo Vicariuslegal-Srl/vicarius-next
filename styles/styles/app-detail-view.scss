@@ -1,0 +1,99 @@
+.app-detail-view {
+
+  background-color: white;
+  height: 100%;
+  box-shadow: var(--dv2);
+
+  main {
+
+    ul {
+
+      li {
+
+        padding: 15px 0;
+
+        h4 {
+
+          font-size: 15px;
+        }
+
+        span {
+
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  footer {
+
+    .footer__container {
+
+      padding: 15px 0;
+
+      h4 {
+
+        font-size: 15px;
+      }
+
+      span {
+
+        font-size: 11px;
+      }
+
+      .btn {
+
+        background: rgb(200,200,200);
+        width: 100%;
+        max-width: 280px;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 20px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+
+          opacity: 0.75;
+        }
+
+        > i {
+
+          margin-right: 10px;
+        }
+
+        &.fb {
+
+          background-color: #3B5998;
+          color: white;
+        }
+
+        &.active {
+
+          background-color: var(--main-color);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .alert-detail-view-form {
+
+    h3 {
+
+      font-size: 21px;
+    }
+
+    .info {
+
+      padding: 10px 0;
+      font-size: 12px;
+      line-height: 2;
+    }
+  }
+}
