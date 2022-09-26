@@ -1,15 +1,15 @@
-import { Box } from "../../../shared/Typography";
-import { AppList, AppListItem, AppListItemIcon, AppListItemText } from "../../../shared/AppList";
+import Head from "next/head";
 import Image from "next/image";
 import { API } from "../../../shared/utils";
 import { constants } from "../../../constants/constants";
 import { AppShell } from "../../../shared/AppShell";
+import { Box } from "../../../shared/Typography";
+import { AppList, AppListItem, AppListItemIcon, AppListItemText } from "../../../shared/AppList";
 
 export async function getServerSideProps(context) {
     const { id } = context.query;
     try {
         const response = await API('user/' + id);
-        console.log(typeof response)
         return {
             props: {
                 data: response.data
@@ -27,10 +27,10 @@ export async function getServerSideProps(context) {
 export default function UserDetailView({ data }) {
 
     return <AppShell>
-        {/*<Helmet>
+        <Head>
             <title>{`Avv. ${data.name}`}</title>
             <meta name="description" content={data.summary || "Nessuna descrizione presente"} />
-</Helmet>*/}
+        </Head>
         <Box>
             <header>
                 <div className="alert-title">

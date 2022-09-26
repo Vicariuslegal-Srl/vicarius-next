@@ -82,10 +82,12 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
         {requestUser && <span className="alert-header__portrait btn pointer is-mobile" onClick={() => setMenuIsOpen("open")}>
             <i className="fas fa-bars"/>
         </span>}
-        <a href="/app/" className="alert-header__title">
-            <Image src={Logo} alt="vicarius logo" width='45' height='45'/>
-            <h2>Vicarius Legal</h2>
-        </a>
+        <Link href="/app/">
+            <a className="alert-header__title">
+                <Image src={Logo} alt="vicarius logo" width='28' height='28' />
+                <h2>Vicarius Legal</h2>
+            </a>
+        </Link>
         <div className="alert-header__search-container">
             <div className="alert-header__search-bar">
                 {!activeSearch ? <i className="fas fa-search ico" onClick={() => {

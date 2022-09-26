@@ -40,6 +40,11 @@
         width: 65px;
         height: 65px;
       }
+
+      img {
+
+        object-fit: cover;
+      }
     }
 
     &__text {
