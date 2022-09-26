@@ -4,6 +4,7 @@ import {AppAvatar} from "./AppAvatar";
 import {Fragment} from "react";
 import {useRequestUser} from "./utils";
 import Logo from '../logo_colored.png';
+import { constants } from '../constants/constants';
 
 const window = {location: {}};
 const routes = [];
@@ -17,10 +18,11 @@ export const AppAside = ({isOpen, setIsOpen}) => {
     return <aside className={css} onClick={() => setIsOpen("closed")}>
         <div className='alert-aside__menu-wrapper'>
             <div className='alert-title is-desktop'>
-                <h3>MENU</h3>
+                <h3>{'città'.toUpperCase()}</h3>
             </div>
             <ul className='alert-aside__menu'>
-                <li className='user-card'>
+                <li>{constants.courts.map((court, i) => <Link key={i} href={"/app/?dati_utente__citta="+court}>{court}</Link>)}</li>
+                {/*<li className='user-card'>
                     {requestUser ? <Fragment>
                         <FlexBox justify='center'>
                             <AppAvatar
@@ -73,7 +75,7 @@ export const AppAside = ({isOpen, setIsOpen}) => {
                         Modifica Dati Professionali
                         </a>
                     </li>
-                    */}
+                    }
                     <li>
                         <a href='/accounts/password_change/'>
                             <i className="fas fa-key"/>
@@ -86,7 +88,8 @@ export const AppAside = ({isOpen, setIsOpen}) => {
                             Logout
                         </a>
                     </li>
-                </Fragment>}
+                </Fragment>}*/}
+
             </ul>
             <div className='is-desktop'>
                 <span className='copyright'>

@@ -61,7 +61,8 @@
         box-shadow: var(--dv4);
         background: white;
         position: fixed;
-        height: 100%;
+        height: 70vh;
+        overflow-y: scroll;
 
         .user-card {
 
@@ -95,7 +96,7 @@
             box-shadow: var(--dv2);
             border-radius: 5px;
             position: static;
-            height: auto;
+            // height: auto;
 
             .user-card {
 

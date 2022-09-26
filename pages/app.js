@@ -50,7 +50,8 @@ export default function Home({ data }) {
                               </AppListItemIcon>
                               <AppListItemText
                                   title={user.name}
-                                  subtitle={user.places}
+                                  //subtitle={user.places}
+                                  subtitle={user.areas.map(e => e.area).join(', ')}
                               />
                           </AppListItem>
                         </a>
