@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import ReactWhatsapp from 'react-whatsapp';
 import { API } from "../../../shared/utils";
 import { constants } from "../../../constants/constants";
 import { AppShell } from "../../../shared/AppShell";
@@ -10,6 +11,7 @@ export async function getServerSideProps(context) {
     const { id } = context.query;
     try {
         const response = await API('user/' + id);
+        console.log(response.data)
         return {
             props: {
                 data: response.data
@@ -49,6 +51,15 @@ export default function UserDetailView({ data }) {
                         />
                     </AppListItem>
                     <AppListItem>
+                        {data.show_phone && data.phone && <ReactWhatsapp 
+                            number={data.phone.replace(/[\(\)\s\-\.]/g, '')} 
+                            message={"Egregio avv. " + data.name}
+                            className="waBtn">
+                                whatsapp
+                        </ReactWhatsapp>}
+                        {data.cv && data.cv !== '/media/default.svg' && <a href={data.cv} download={true} className="cvBtn">curriculum</a>}
+                    </AppListItem>
+                    <AppListItem>
                         <AppListItemText
                             title="Tribunali"
                             subtitle={data.jobs && data.jobs.map((job, i) => {
@@ -72,12 +83,6 @@ export default function UserDetailView({ data }) {
                             subtitle={data.summary ? data.summary : "Nessuna descrizione presente"}
                         />
                     </AppListItem>
-                    {data.cv && <AppListItem>
-                        <AppListItemText
-                            title="Curriculum"
-                            subtitle={<a href={data.cv} download={true}>download</a>}
-                        />
-                    </AppListItem>}
                     <AppListItem>
                         <AppListItemText
                             title="Contatti"
