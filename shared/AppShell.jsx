@@ -80,9 +80,9 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
     }, [requestUser])
 
     return <header className={headerCSS}>
-        {requestUser && <span className="alert-header__portrait btn pointer is-mobile" onClick={() => setMenuIsOpen("open")}>
+        {/*<span className="alert-header__portrait btn pointer is-mobile" onClick={() => setMenuIsOpen("open")}>
             <i className="fas fa-bars"/>
-        </span>}
+        </span>*/}
         <Link href="/app/">
             <a className="alert-header__title">
                 <Image src={Logo} alt="vicarius logo" width='28' height='28' />
