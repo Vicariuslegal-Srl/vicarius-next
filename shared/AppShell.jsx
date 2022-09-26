@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import AvatarImage from "../avatar.png"
 import { constants } from "../constants/constants";
+import { AppBlogAside } from "./AppBlogAside";
 
 const window = {};
 
@@ -156,7 +157,8 @@ export const AppShell = ({ children, ...props }) => {
                 }
                 return child;
             }) }
-            <AlertBanner />
+            <AppBlogAside />
+            {/*<AlertBanner />*/}
             { messages.map((mess, i) => <AppToast
                 key={i}
                 id={i}
