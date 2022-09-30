@@ -2,9 +2,12 @@ import Image from "next/image"
 
 export const AppAvatar = ({src, weight='normal', alt='avatar image'}) => {
 
-    let dim = 45;
+    let dim = 65;
     if (weight == 'large'){
-        dim = 65;
+        dim = 95;
+    }
+    if (weight == 'small'){
+        dim = 45;
     }
 
     return <div className={'app-avatar ' + weight}>

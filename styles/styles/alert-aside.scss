@@ -56,13 +56,13 @@
 
     &__menu {
 
-        min-width: 190px;
-        width: 80%;
+        // min-width: 190px;
+        // width: 80%;
         box-shadow: var(--dv4);
         background: white;
         position: fixed;
-        height: 70vh;
-        overflow-y: scroll;
+        max-height: 70vh;
+        overflow-y: auto;
 
         .user-card {
 
@@ -92,7 +92,7 @@
 
         @media only screen and (min-width: 940px) {
 
-            width: 80%;
+            // width: 80%;
             box-shadow: var(--dv2);
             border-radius: 5px;
             position: static;

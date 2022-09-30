@@ -1,20 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
 import ReactWhatsapp from 'react-whatsapp';
-import { API } from "../../../shared/utils";
 import { constants } from "../../../constants/constants";
+import { API } from "../../../shared/utils";
 import { AppShell } from "../../../shared/AppShell";
 import { Box } from "../../../shared/Typography";
 import { AppList, AppListItem, AppListItemIcon, AppListItemText } from "../../../shared/AppList";
+import { AppAside } from "../../../shared/AppAside";
 
 export async function getServerSideProps(context) {
     const { id } = context.query;
     try {
-        const response = await API('user/' + id);
-        console.log(response.data)
+        const [response, response_related_users] = await Promise.all([
+            API('user/' + id),
+            API('user/?limit=5&dati_utente__citta=milano')
+        ]);
+        console.log(response_related_users.data)
         return {
             props: {
-                data: response.data
+                data: response.data,
+                related_users: response_related_users.data.map(user => {
+                    return {
+                        name: user.name,
+                        avatar: constants.remoteBaseUrl + user.picture,
+                        url: '/app/user/' + user.id
+                    }
+                })
             },
         };
     } catch (error) {
@@ -26,13 +37,14 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default function UserDetailView({ data }) {
+export default function UserDetailView({ data, related_users }) {
 
     return <AppShell>
         <Head>
             <title>{`Avv. ${data.name}`}</title>
             <meta name="description" content={data.summary || "Nessuna descrizione presente"} />
         </Head>
+        <AppAside title='utenti correlati' items={related_users} />
         <Box>
             <header>
                 <div className="alert-title">
@@ -92,5 +104,6 @@ export default function UserDetailView({ data }) {
                 </AppList>
             </main>
         </Box>
+        <AppAside title='contatta' />
     </AppShell>
 }

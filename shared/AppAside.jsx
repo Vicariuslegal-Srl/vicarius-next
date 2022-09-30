@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FlexBox } from './Typography';
+import { AppAvatar } from './AppAvatar';
 
 export const AppAside = ({ title, items }) => {
 
@@ -11,7 +13,7 @@ export const AppAside = ({ title, items }) => {
                 <h3>{ title.toUpperCase() }</h3>
             </div>
             <ul className='alert-aside__menu'>
-                <li>{items.map((item, i) => <Link key={i} href={item.url}>
+                <li>{items && items.map((item, i) => <Link key={i} href={item.url}>
                     <a>
                         {item.cover_image && <>
                             <Image 
@@ -22,7 +24,17 @@ export const AppAside = ({ title, items }) => {
                                 height='150'
                             /><br/>
                         </>}
-                        <span>{ item.title }</span>
+                        {item.avatar && <>
+                            <FlexBox justify='flex-start'>
+                                <AppAvatar 
+                                    src={item.avatar}
+                                    weight='small'
+                                    alt={item.name}
+                                />
+                                <span style={{ marginLeft: "10px"}}>{ item.name }</span>
+                            </FlexBox>
+                        </>}
+                        <span>{ !item.avatar && item.title }</span>
                     </a>
                 </Link>)}</li>
             </ul>
