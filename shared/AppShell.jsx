@@ -9,7 +9,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import AvatarImage from "../avatar.png"
 import { constants } from "../constants/constants";
-import { AppBlogAside } from "./AppBlogAside";
 
 const window = {};
 
@@ -132,11 +131,6 @@ export const AppShell = ({ children, ...props }) => {
     const [menuIsOpen, setMenuIsOpen] = useState("closed");
     const [activeSearch, setActiveSearch] = useState(false);
 
-    useEffect(() => {
-
-        API(constants.userCheckingUrl).then(response => response && response.data && saveUser(response.data))
-    }, [])
-
     const addMessage = mess => {
         let messagesList = messages.slice(0);
         messagesList.push(mess);
@@ -150,15 +144,12 @@ export const AppShell = ({ children, ...props }) => {
             setMenuIsOpen={status => setMenuIsOpen(status)}
         />
         <AppMain>
-            <AppAside isOpen={menuIsOpen} setIsOpen={status => setMenuIsOpen(status)} />
             { Children.map(children, child => {
                 if (isValidElement(child)) {
                   return cloneElement(child, {addMessage: mess => addMessage(mess)});
                 }
                 return child;
             }) }
-            <AppBlogAside />
-            {/*<AlertBanner />*/}
             { messages.map((mess, i) => <AppToast
                 key={i}
                 id={i}

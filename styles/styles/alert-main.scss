@@ -4,12 +4,12 @@
     max-width: var(--view-width);
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 50% 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     padding-top: 15px;
 
     @media only screen and (max-width: 940px) {
         
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 65% 35%;
     }
 
     @media only screen and (max-width: 640px) {
