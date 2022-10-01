@@ -23,27 +23,27 @@ export const constants = {
     test_blogs: [
         {
             "title": "Il Nuovo Volto Del Processo Di Famiglia",
-            "cover_image": "https://www.vicariuslegal.it/media/family-g951b61afb_1920_OZ6jJs3.jpg",
+            "cover_image": "/media/family-g951b61afb_1920_OZ6jJs3.jpg",
             "url": "https://www.vicariuslegal.it/blog/article/7"
         },
         {
             "title": "Sussidi Alla Cultura: Quale Strada Post Pandemia?",
-            "cover_image": "https://www.vicariuslegal.it/media/cinema-4609877_1920.jpg",
+            "cover_image": "/media/cinema-4609877_1920.jpg",
             "url": "https://www.vicariuslegal.it/blog/article/6"
         },
         {
             "title": "La Tutela Della Corrispondenza Tra Difensore E Assistito: Si Pronuncia La Corte Di Strasburgo",
-            "cover_image": "https://www.vicariuslegal.it/media/pexels-georges-christophe-3829671_1.jpg",
+            "cover_image": "/media/pexels-georges-christophe-3829671_1.jpg",
             "url": "https://www.vicariuslegal.it/blog/article/5"
         },
         {
             "title": "Le Tutele Del Lavoratore In Caso Di Omesso Versamento Contributivo",
-            "cover_image": "https://www.vicariuslegal.it/media/skyscraper-3184798.jpg",
+            "cover_image": "/media/skyscraper-3184798.jpg",
             "url": "https://www.vicariuslegal.it/blog/article/4"
         },
         {
             "title": "Obbligo contributivo ENASARCO per agenti operanti all’estero",
-            "cover_image": "https://www.vicariuslegal.it/media/tie-690084.jpg",
+            "cover_image": "/media/tie-690084.jpg",
             "url": "https://www.vicariuslegal.it/blog/article/3"
         }
     ],

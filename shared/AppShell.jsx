@@ -119,7 +119,7 @@ const AppHeader = ({ activeSearch, setActiveSearch, setMenuIsOpen }) => {
             <span className="alert-header__portrait is-desktop">
                 <Image src={requestUser ? requestUser.picture : AvatarImage} alt="Profilo"/>
             </span>
-        </Fragment> : <Link href='/app/login'>
+        </Fragment> : <Link href='/app/signin'>
             <a className='alert-header_login-btn regular-btn contained secondary'>ACCEDI</a>
         </Link>}
     </header>

@@ -53,20 +53,16 @@ export default function Home({ data, articles }) {
                 <AppList>
                     {Object.keys(data).map((key, i) => {
                         const user = data[key];
-                        return (<Link key={i} href={'/app/user/' + user.id}>
-                        <a>
-                            <AppListItem border>
-                                <AppListItemIcon weight="large">
-                                    <Image alt={user.name} src={constants.remoteBaseUrl + user.picture} width='65' height='65' />
-                                </AppListItemIcon>
-                                <AppListItemText
-                                    title={user.name}
-                                    //subtitle={user.places}
-                                    subtitle={user.areas.map(e => e.area).join(', ')}
-                                />
-                            </AppListItem>
-                        </a>
-                        </Link>)
+                        return (<AppListItem key={i} border href={'/app/user/' + user.id}>
+                            <AppListItemIcon weight="large">
+                                <Image alt={user.name} src={constants.remoteBaseUrl + user.picture} width='65' height='65' />
+                            </AppListItemIcon>
+                            <AppListItemText
+                                title={user.name}
+                                //subtitle={user.places}
+                                subtitle={user.areas.map(e => e.area).join(', ')}
+                            />
+                        </AppListItem>)
                     })}
                 </AppList>
             </main>

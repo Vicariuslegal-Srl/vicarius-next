@@ -4,11 +4,25 @@
   box-shadow: var(--dv2);
   border-radius: 5px;
 
+  li {
+
+    &.bordered {
+      border-bottom: var(--br1);
+      transition: background-color 0.17s;
+    }
+
+    &:hover {
+
+      background-color: var(--main-color-hover);
+    }
+  }
+
   &__item {
 
     display: flex;
     align-items: center;
     padding: 8px 12px;
+    position: relative;
 
     &__icon {
 
@@ -64,17 +78,6 @@
         font-size: 13px;
         display: block;
         color: var(--light-gray);
-      }
-    }
-
-    &.bordered {
-
-      border-bottom: var(--br1);
-      transition: background-color 0.17s;
-
-      &:hover {
-
-        background-color: var(--main-color-hover);
       }
     }
   }

@@ -4,7 +4,7 @@ import ReactWhatsapp from 'react-whatsapp';
 import { constants } from "../../../constants/constants";
 import { API } from "../../../shared/utils";
 import { AppShell } from "../../../shared/AppShell";
-import { Box } from "../../../shared/Typography";
+import { Box, FlexBox } from "../../../shared/Typography";
 import { AppList, AppListItem, AppListItemIcon, AppListItemText } from "../../../shared/AppList";
 import { AppAside } from "../../../shared/AppAside";
 
@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
                 related_users: response_related_users.data.map(user => {
                     return {
                         name: user.name,
-                        avatar: constants.remoteBaseUrl + user.picture,
+                        avatar: user.picture,
                         url: '/app/user/' + user.id
                     }
                 })
@@ -35,6 +35,25 @@ export async function getServerSideProps(context) {
             },
         };
     }
+}
+
+const ContactForm = () => {
+
+    return <form>
+        <div>
+            <FlexBox>
+                <label>EMAIL</label>
+                <input type='email' />
+            </FlexBox>
+            <FlexBox>
+                <label>MESSAGGIO</label>
+                <textarea></textarea>
+            </FlexBox>
+            <FlexBox>
+                <button>INVIA</button>
+            </FlexBox>
+        </div>
+    </form>
 }
 
 export default function UserDetailView({ data, related_users }) {
@@ -104,6 +123,8 @@ export default function UserDetailView({ data, related_users }) {
                 </AppList>
             </main>
         </Box>
-        <AppAside title='contatta' />
+        <AppAside title='contatta'>
+            <ContactForm />
+        </AppAside>
     </AppShell>
 }

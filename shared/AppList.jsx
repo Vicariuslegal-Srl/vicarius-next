@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const AppListItemAction = ({children}) => {
 
     return <div className="app-list__item__action">
@@ -28,10 +30,14 @@ export const AppListItemText = ({title, subtitle}) => {
     </div>
 }
 
-export const AppListItem = ({children, border}) => {
+export const AppListItem = ({ children, border, href }) => {
 
-    return <li className={"app-list__item" + (border ? " bordered" : "")}>
-        {children}
+    return <li className={border && "bordered"}>
+        {href ? <Link href={href}>
+            <a className="app-list__item">{children}</a>
+        </Link> : <div className="app-list__item">
+            {children}
+        </div>}
     </li>
 }
 
